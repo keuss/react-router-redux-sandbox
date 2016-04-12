@@ -14,8 +14,10 @@
     "build-stylus": "stylus styl/index.styl -c -u ./node_modules/autoprefixer-stylus -o app.css",
     "watch-stylus": "stylus -w -m styl/index.styl -u ./node_modules/autoprefixer-stylus -o app.css",
     "watch-js": "watchify index.js -o app.js -v --debug",
+    "watch": "",
     "build-js": "browserify index.js -o app.js",
-    "start": "python -m SimpleHTTPServer"
+    "serve" : "python -m SimpleHTTPServer",
+    "start": "concurrently \"npm run watch-js\" \"npm run watch-stylus\" \"npm run serve\""
   },
   "browserify": {
     "transform": [
@@ -58,6 +60,7 @@
     "eslint-plugin-react": "^3.16.1",
     "redux-devtools": "^3.1.0",
     "stylus": "^0.52.4",
-    "watchify": "^3.6.1"
+    "watchify": "^3.6.1",
+    "concurrently" : "2.0.0"
   }
 }
