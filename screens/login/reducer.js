@@ -4,7 +4,8 @@ const defaultState = {
   username: '',
   password: '',
   loading: false,
-  error: null
+  error: null,
+  token: ''
 }
 
 export default (state = defaultState, action) => {
@@ -33,7 +34,9 @@ export default (state = defaultState, action) => {
         ) || null
       })
     case types.LOGIN_SUCCESS:
-      return defaultState
+      return Object.assign({}, state, {
+        token: 'thisisajsonwebtoken'
+      })
     default:
       return state
   }
