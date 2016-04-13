@@ -3,10 +3,6 @@ import { connect } from 'react-redux'
 import { increase, decrease } from '../actions/count'
 
 function Home({ number, increase, decrease }) {
-  console.log('Render Home ...')
-  console.log('number', number)
-  console.log('increase', increase)
-  console.log('decrease', decrease)
   return (
     <div>
       Some state changes:
