@@ -6,9 +6,8 @@ export default function App({ children }) {
   return (
     <div>
       <header>
-        <Link to="/">Home</Link>
-        <Link to="/foo">Foo</Link>
-        <Link to="/bar">Bar</Link>
+        <Link to="/">Login</Link>
+        <Link to="/home">Bar</Link>
       </header>
       <main style={{ marginTop: '1.5em' }}>{children}</main>
     </div>

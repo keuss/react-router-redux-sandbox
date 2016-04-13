@@ -1,12 +1,18 @@
-import { createStore, applyMiddleware } from 'redux';
-import logger from 'redux-logger';
-import thunk from 'redux-thunk';
+import { createStore, combineReducers, applyMiddleware } from 'redux'
+import {routerReducer} from 'react-router-redux'
+import logger from 'redux-logger'
+import thunk from 'redux-thunk'
+
+import login from '../screens/login/reducer'
+import * as home from '../reducers';
 
 //Taken from redux example, this allows handling asynchronous data mode
-const middleware = [thunk, logger()];
+const middleware = [thunk, logger()]
 
-const createStoreWithMiddleware = applyMiddleware(...middleware)(createStore);
+const rootReducer = combineReducers({
+  login,
+  home,
+  routing: routerReducer
+})
 
-export default function(rootReducer, initialState){
-  return {store: createStoreWithMiddleware(rootReducer, initialState)};
-}
+export default createStore(rootReducer, {}, applyMiddleware(...middleware))
