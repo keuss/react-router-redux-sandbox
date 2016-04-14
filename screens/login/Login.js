@@ -30,7 +30,7 @@ class Login extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  console.log(state)
+  console.log('mapStateToProps', state)
   return {
     username: state.login.username,
     password: state.login.password,
@@ -41,16 +41,12 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    handleLogin: (username, password)=> {
+    handleLogin: (username, password) => {
       console.log("handling login...")
-      dispatch(login(username, password));
+      return dispatch(login(username, password));
     },
-    onUsernameChange: (username) => {
-      dispatch(setUsername(username));
-    },
-    onPasswordChange: (password) => {
-      dispatch(setPassword(password));
-    }
+    onUsernameChange: (username) => dispatch(setUsername(username)),
+    onPasswordChange: (password) => dispatch(setPassword(password))
   }
 }
 

@@ -8,8 +8,8 @@ import {syncHistoryWithStore} from 'react-router-redux'
 
 
 import {App, Home, Foo, Bar} from './components'
-import Login from './screens/login/Login';
-import store from './shared/storeConfig';
+import Login from './screens/login/Login'
+import store from './shared/storeConfig'
 
 //Enable ES2016 Promises
 ES6Promise.polyfill()
@@ -18,27 +18,26 @@ const history = syncHistoryWithStore(browserHistory, store)
 
 const passAuth = function(store, nextState, replace){
   if(store.getState().login && store.getState().login.token) {
-    console.log("User already authenticated, returning home");
+    console.log("User already authenticated, returning home")
     replace({
       pathname: '/home',
       state : Object.assign({}, nextState, {nextPathname: nextState.location.pathname})
-    });
+    })
   } else {
     // User not authenticated
-    return;
+    return
   }
 }
 
 const checkAuth = function(store, nextState, replace) {
   if(store.getState().login && store.getState().login.token) {
-    return;
+    return
   } else {
     console.warn("User not authenticated, returning to login screen")
-    //
     replace({
       pathname: '/',
       state : Object.assign({}, nextState, {nextPathname: nextState.location.pathname})
-    });
+    })
   }
 }
 
