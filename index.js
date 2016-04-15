@@ -7,8 +7,9 @@ import {Router, Route, IndexRoute, browserHistory} from 'react-router'
 import {syncHistoryWithStore} from 'react-router-redux'
 
 
-import {App, Home, Foo, Bar} from './components'
+import { App } from './components'
 import Login from './screens/login/Login'
+import Home from './screens/home/Home'
 import store from './shared/storeConfig'
 
 //Enable ES2016 Promises
@@ -42,12 +43,13 @@ const checkAuth = function(store, nextState, replace) {
 }
 
 console.log('index.js ...')
+// TODO home screen
 ReactDOM.render(
   <Provider store={store}>
     <Router history={history}>
       <Route path="/" component={App}>
         <IndexRoute component={Login} onEnter={(nextState, replace) => passAuth(store, nextState, replace)}/>
-        <Route path="home" component={Bar} onEnter={(nextState, replace) => checkAuth(store, nextState, replace)}/>
+        <Route path="home" component={Home} onEnter={(nextState, replace) => checkAuth(store, nextState, replace)}/>
       </Route>
     </Router>
   </Provider>,

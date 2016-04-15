@@ -47,7 +47,7 @@ class Api {
 
   // Generic post, returns a Promise with the response
   function post(path = '', params, extraHeaders = {}) {
-    
+
     const headerProps = Object.assign({}, {'Content-Type': 'application/json'}, extraHeaders)
     const separator = (path.length && path[0] === '/') ? '' : '/'
 

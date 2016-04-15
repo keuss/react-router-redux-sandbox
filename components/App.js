@@ -7,7 +7,7 @@ export default function App({ children }) {
     <div>
       <header>
         <Link to="/">Login</Link>
-        <Link to="/home">Bar</Link>
+        <Link to="/home">Home</Link>
       </header>
       <main style={{ marginTop: '1.5em' }}>{children}</main>
     </div>
