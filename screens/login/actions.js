@@ -1,6 +1,7 @@
 import ActionType from '../../shared/ActionType'
 import { browserHistory } from 'react-router'
 
+import api from '../../shared/api'
 
 const types = ActionType.create(
   'SET_USERNAME',
@@ -47,8 +48,10 @@ export const login = (username, password) =>
   (dispatch, getState) => {
     dispatch(loginRequest());
     console.log('login with : ' + username + ', and ' + password);
+
     (new Promise(function(resolve, reject) {
-      console.log("creating XHR")
+      // Refactor to use api.getJSON
+      // Check login with http://localhost:3000/users?name=admin&pwd=admin (result > 0 && result <= 1)
       const uri = "http://httpbin.org/delay/2";
       const method = "GET";
       let xhr = new XMLHttpRequest();
