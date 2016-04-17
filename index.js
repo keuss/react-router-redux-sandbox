@@ -3,7 +3,7 @@ import * as ES6Promise from 'es6-promise'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import {Provider} from 'react-redux'
-import {Router, Route, IndexRoute, browserHistory} from 'react-router'
+import {Router, Route, IndexRoute, hashHistory} from 'react-router'
 import {syncHistoryWithStore} from 'react-router-redux'
 
 
@@ -15,7 +15,7 @@ import store from './shared/storeConfig'
 //Enable ES2016 Promises
 ES6Promise.polyfill()
 
-const history = syncHistoryWithStore(browserHistory, store)
+const history = syncHistoryWithStore(hashHistory, store)
 
 const passAuth = function(store, nextState, replace){
   if(store.getState().login && store.getState().login.token) {

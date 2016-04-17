@@ -2,7 +2,6 @@ import React from 'react'
 import { Link, browserHistory } from 'react-router'
 
 export default function App({ children }) {
-  console.log('render App with', children)
   return (
     <div>
       <header>

@@ -17,7 +17,7 @@
     "build-js": "browserify index.js -o app.js",
     "serve": "python -m SimpleHTTPServer",
     "run-back": "json-server --watch fakedb/db.json",
-    "start": "concurrently \"npm run watch-js\" \"npm run watch-stylus\" \"npm run serve\" \"npm run run-back\""
+    "start": "concurrently \"npm run watch-js\" \"npm run watch-stylus\" \"npm run serve\""
   },
   "browserify": {
     "transform": [

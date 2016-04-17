@@ -4,6 +4,7 @@ import logger from 'redux-logger'
 import thunk from 'redux-thunk'
 
 import login from '../screens/login/reducer'
+import home from '../screens/home/reducer'
 
 //Taken from redux example, this allows handling asynchronous data mode
 const middleware = [thunk, logger()]
@@ -15,6 +16,7 @@ const initialState = {}
 // TODO real home reducer
 const rootReducer = combineReducers({
   login,
+  home,
   routing: routerReducer
 })
 

@@ -1,5 +1,5 @@
 import ActionType from '../../shared/ActionType'
-import { browserHistory } from 'react-router'
+import { hashHistory } from 'react-router'
 
 import api from '../../shared/api'
 
@@ -73,7 +73,7 @@ export const login = (username, password) =>
     })).then( (response) => {
       console.log(response)
       dispatch(loginSuccess())
-      browserHistory.push('/home')
+      hashHistory.push('/home')
     }).catch( (status) => {
       console.error("Unable to verify credentiels : " + status)
       dispatch(loginError(status))

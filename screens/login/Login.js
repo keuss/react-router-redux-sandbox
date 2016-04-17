@@ -20,8 +20,8 @@ class Login extends React.Component {
     return (
       <form id="loginBox" onSubmit={this.handleFormAction}>
           <h4>Please log in</h4>
-          <input value={this.props.username} name="login" type="text" placeholder="Username" onChange={(e) => this.props.onUsernameChange(e.target.value)}/>
-          <input value={this.props.password} name="password" type="password" placeholder="************" onChange={(e) => this.props.onPasswordChange(e.target.value)}/>
+          <input value={this.props.username} name="login" type="text" placeholder="Identifiant" onChange={(e) => this.props.onUsernameChange(e.target.value)}/>
+          <input value={this.props.password} name="password" type="password" placeholder="Mot de passe" onChange={(e) => this.props.onPasswordChange(e.target.value)}/>
           <p style={{color: 'red', display: this.props.error ? 'block' : 'none'}}>{this.props.error}</p>
           <button disabled={this.props.loading === true} type="button"  onClick={this.handleFormAction}>Login</button>
       </form>
