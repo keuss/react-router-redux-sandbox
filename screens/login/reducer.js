@@ -26,12 +26,7 @@ export default (state = defaultState, action) => {
     case types.LOGIN_FAIL:
       return Object.assign({}, state, {
         loading: false,
-        error: (
-          action.error &&
-          action.error.global &&
-          action.error.global.length > 0 &&
-          action.error.global[0].msg
-        ) || null
+        error: action.error || "Unknown error"
       })
     case types.LOGIN_SUCCESS:
       return Object.assign({}, state, {

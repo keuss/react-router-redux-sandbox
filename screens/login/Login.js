@@ -20,17 +20,16 @@ class Login extends React.Component {
     return (
       <form id="loginBox" onSubmit={this.handleFormAction}>
           <h4>Please log in</h4>
-          <input value={this.props.username} name="login" type="text" placeholder="Username" onChange={(e) => this.props.onUsernameChange(e.target.value)}/>
-          <input value={this.props.password} name="password" type="password" placeholder="************" onChange={(e) => this.props.onPasswordChange(e.target.value)}/>
+          <input value={this.props.username} name="login" type="text" placeholder="Identifiant" onChange={(e) => this.props.onUsernameChange(e.target.value)}/>
+          <input value={this.props.password} name="password" type="password" placeholder="Mot de passe" onChange={(e) => this.props.onPasswordChange(e.target.value)}/>
           <p style={{color: 'red', display: this.props.error ? 'block' : 'none'}}>{this.props.error}</p>
-          <button disabled={this.props.loading === true} type="button"  onClick={this.handleFormAction}>Login</button>
+          <button disabled={this.props.loading === true} type="button" onClick={this.handleFormAction}>Login</button>
       </form>
     )
   }
 }
 
 const mapStateToProps = (state) => {
-  console.log('mapStateToProps', state)
   return {
     username: state.login.username,
     password: state.login.password,
@@ -42,7 +41,6 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     handleLogin: (username, password) => {
-      console.log("handling login...")
       return dispatch(login(username, password));
     },
     onUsernameChange: (username) => dispatch(setUsername(username)),

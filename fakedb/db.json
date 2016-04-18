@@ -1,0 +1,49 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "admin",
+      "pwd": "admin"
+    }
+  ],
+  "accounts": [
+    {
+      "id": 1,
+      "name": "Compte principal",
+      "balance": 20,
+      "expenses": [
+        {
+          "id": 1,
+          "date": "10/04/2016",
+          "issuer": "Spotify",
+          "description": "Abonnement",
+          "value": -9.99
+        },
+        {
+          "id": 2,
+          "date": "12/04/2016",
+          "issuer": "Amazon.fr",
+          "description": "Remboursement retour produit",
+          "value": 250
+        },
+        {
+          "id": 3,
+          "date": "16/04/2016",
+          "issuer": "Steam",
+          "description": "Achat Dark Souls III",
+          "value": -59.99
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Plan épargne logement",
+      "balance": 8000
+    },
+    {
+      "id": 3,
+      "name": "Prêt croissants",
+      "balance": -200
+    }
+  ]
+}

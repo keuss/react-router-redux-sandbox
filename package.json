@@ -1,12 +1,11 @@
 {
   "name": "react-router-redux-basic-example",
   "version": "0.0.0",
-  "repository": "reactjs/react-router-redux",
-  "description": "Desktop application react-router-redux test",
   "repository": {
     "type": "git",
     "url": "https://github.com/keuss/react-router-redux-sandbox"
   },
+  "description": "Desktop application react-router-redux test",
   "license": "MIT",
   "author": "GALLOIS Guillaume",
   "main": "index.js",
@@ -16,7 +15,8 @@
     "watch-js": "watchify index.js -o app.js -v --debug",
     "watch": "",
     "build-js": "browserify index.js -o app.js",
-    "serve" : "python -m SimpleHTTPServer",
+    "serve": "python -m SimpleHTTPServer",
+    "run-back": "json-server --watch fakedb/db.json",
     "start": "concurrently \"npm run watch-js\" \"npm run watch-stylus\" \"npm run serve\""
   },
   "browserify": {
@@ -55,12 +55,13 @@
     "babel-preset-stage-1": "^6.3.13",
     "babelify": "^7.2.0",
     "browserify": "^12.0.1",
+    "concurrently": "2.0.0",
     "eslint": "^1.10.3",
     "eslint-config-rackt": "^1.1.1",
     "eslint-plugin-react": "^3.16.1",
+    "json-server": "^0.8.9",
     "redux-devtools": "^3.1.0",
     "stylus": "^0.52.4",
-    "watchify": "^3.6.1",
-    "concurrently" : "2.0.0"
+    "watchify": "^3.6.1"
   }
 }

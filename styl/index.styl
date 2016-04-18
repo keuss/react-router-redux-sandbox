@@ -3,6 +3,8 @@ background = #e8eeef
 
 // others
 inputDarkGray = #454142
+balanceGreen = #2a2
+balanceRed = #a22
 
 body
   background-color background
@@ -17,7 +19,6 @@ body
       background-color inputDarkGray
       color background
 
-
   main
     display flex
     flex-flow row
@@ -31,7 +32,38 @@ body
       align-content center
       input
         margin .3em 0
-
+    #accountHolder
+      width 100%
+      display flex
+      flex-flow row
+      #accList
+        display flex
+        flex-flow column
+        flex 1 0 auto
+        h5
+          margin .1em
+          padding .3em
+          display flex
+          flex-flow row
+          justify-content space-between
+        h5:not(.selected)
+          color #9da0a4
+          span
+            color #9da0a4
+        .selected
+          border 1px solid #aaa
+          border-radius .2em
+          background-color white
+      #accData
+        flex 1 0 auto;
+        margin 0 0 0 .5em
+        #accDetails
+          display flex
+          flex-flow column
+          .expense
+            display flex
+            flex-flow row
+            justify-content space-between
 
 button
   margin 4px
@@ -42,3 +74,10 @@ button
 
 .pointer
   cursor pointer
+
+.green
+  font-weight bold
+  color balanceGreen
+.red
+  font-weight bold
+  color balanceRed

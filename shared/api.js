@@ -1,10 +1,10 @@
 import fetch from 'isomorphic-fetch'
 
-
 class Api {
 
   constructor(basePath) {
     this.basePath = basePath
+    console.log('HELLO THIS IS CONSTRUCTOR')
   }
 
   // Copied from Qajax
@@ -17,21 +17,19 @@ class Api {
       }
     }
     return params.join('&')
-  }
+  };
 
-  //For now it only concats a URL
-  //TODO actually encode the url ?
-  function encodeUrl(path, params, queryParams) {
+  encodeUrl(path, params, queryParams) {
     return this.basePath + '/' + path +
     (params ? '/' + params : '' ) +
     (queryParams ? '?' + this.serializeQuery(queryParams) : '')
-  }
+  };
 
-  function filterEmpty(object) {
+  filterEmpty(object) {
     return Object.keys(object).length === 0 ? Promise.reject(object) : Promise.resolve(object)
   }
 
-  function filterSuccess(httpResponse) {
+  filterSuccess(httpResponse) {
     const status = httpResponse.status
     return (status >= 200 && status < 300 || status === 304) ?
     Promise.resolve(httpResponse) :
@@ -39,14 +37,14 @@ class Api {
   }
 
   // Returns a Promise with the response
-  function getJSON(path, params, queryParams) {
+  getJSON(path, params, queryParams) {
     return fetch(this.encodeUrl(path, params, queryParams), { credentials: 'same-origin' })
     .then(this.filterSuccess)
     .then(response => response.json())
   }
 
   // Generic post, returns a Promise with the response
-  function post(path = '', params, extraHeaders = {}) {
+  post(path = '', params, extraHeaders = {}) {
 
     const headerProps = Object.assign({}, {'Content-Type': 'application/json'}, extraHeaders)
     const separator = (path.length && path[0] === '/') ? '' : '/'
@@ -63,12 +61,11 @@ class Api {
 }
 
 // Create instance
-let instances = {
+/*let instances = {
   // basePath is '/api'
   // add other api if needed '/...'
-  api: new Api('/api')
-}
-
-export default {
-  api: instances.api
-}
+  api: new Api('/')
+}*/
+//console.log(instances.api)
+const api = new Api('http://localhost:3000')
+export default api
