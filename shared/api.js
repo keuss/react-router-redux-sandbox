@@ -17,13 +17,13 @@ class Api {
       }
     }
     return params.join('&')
-  };
+  }
 
   encodeUrl(path, params, queryParams) {
     return this.basePath + '/' + path +
     (params ? '/' + params : '' ) +
     (queryParams ? '?' + this.serializeQuery(queryParams) : '')
-  };
+  }
 
   filterEmpty(object) {
     return Object.keys(object).length === 0 ? Promise.reject(object) : Promise.resolve(object)

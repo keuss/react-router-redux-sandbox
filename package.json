@@ -10,10 +10,11 @@
   "author": "GALLOIS Guillaume",
   "main": "index.js",
   "scripts": {
-    "build-stylus": "stylus styl/index.styl -c -u ./node_modules/autoprefixer-stylus -o app.css",
+    "watch": "npm run watch-stylus & npm run watch-js",
     "watch-stylus": "stylus -w -m styl/index.styl -u ./node_modules/autoprefixer-stylus -o app.css",
     "watch-js": "watchify index.js -o app.js -v --debug",
-    "watch": "",
+    "build": "npm run build-stylus & npm run build-js",
+    "build-stylus": "stylus styl/index.styl -c -u ./node_modules/autoprefixer-stylus -o app.css",
     "build-js": "browserify index.js -o app.js",
     "serve": "python -m SimpleHTTPServer",
     "run-back": "json-server --watch fakedb/db.json",

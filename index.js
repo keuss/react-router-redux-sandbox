@@ -15,6 +15,7 @@ import store from './shared/storeConfig'
 //Enable ES2016 Promises
 ES6Promise.polyfill()
 
+// FIXME why hashHistory ?
 const history = syncHistoryWithStore(hashHistory, store)
 
 const passAuth = function(store, nextState, replace){
