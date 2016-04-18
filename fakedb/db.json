@@ -14,25 +14,25 @@
       "expenses": [
         {
           "id": 1,
-          "date": '10/04/2016',
-          "issuer": 'Spotify',
-          "description": 'Abonnement',
+          "date": "10/04/2016",
+          "issuer": "Spotify",
+          "description": "Abonnement",
           "value": -9.99
         },
         {
           "id": 2,
-          "date": '12/04/2016',
-          "issuer": 'Amazon.fr',
-          "description": 'Remboursement retour produit',
+          "date": "12/04/2016",
+          "issuer": "Amazon.fr",
+          "description": "Remboursement retour produit",
           "value": 250
         },
         {
           "id": 3,
-          "date": '16/04/2016',
-          "issuer": 'Steam',
-          "description": 'Achat Dark Souls III',
+          "date": "16/04/2016",
+          "issuer": "Steam",
+          "description": "Achat Dark Souls III",
           "value": -59.99
-        },
+        }
       ]
     },
     {

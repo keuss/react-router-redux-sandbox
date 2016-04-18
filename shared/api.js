@@ -4,6 +4,7 @@ class Api {
 
   constructor(basePath) {
     this.basePath = basePath
+    console.log('HELLO THIS IS CONSTRUCTOR')
   }
 
   // Copied from Qajax
@@ -60,12 +61,11 @@ class Api {
 }
 
 // Create instance
-let instances = {
+/*let instances = {
   // basePath is '/api'
   // add other api if needed '/...'
-  api: new Api('/api')
-}
-
-export default {
-  api: instances.api
-}
+  api: new Api('/')
+}*/
+//console.log(instances.api)
+const api = new Api('http://localhost:3000')
+export default api

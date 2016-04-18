@@ -46,36 +46,16 @@ export const loginSuccess = () =>
 
 export const login = (username, password) =>
   (dispatch, getState) => {
-    dispatch(loginRequest());
-    console.log('login with : ' + username + ', and ' + password);
-
-    (new Promise(function(resolve, reject) {
-      // Refactor to use api.getJSON
-      // Check login with http://localhost:3000/users?name=admin&pwd=admin (result > 0 && result <= 1)
-      const uri = "http://httpbin.org/delay/2";
-      const method = "GET";
-      let xhr = new XMLHttpRequest();
-      xhr.onload = function() {
-        if(this.status >= 200 && this.status < 300) {
-          resolve(this.response)
-        } else {
-          reject(this.statusText)
-        }
+    dispatch(loginRequest())
+    api.getJSON('users', '', {name: username, pwd: password})
+      .then( (response) => {
+      if(response && response.length > 0) {
+        dispatch(loginSuccess())
+        hashHistory.push('/home')
+      } else {
+        dispatch(loginError("No account found..."))
       }
-      xhr.onerror = function() {
-        reject(this.statusText)
-      }
-
-      console.log(`Opening XHR : ${method} for ${uri}`)
-      xhr.open(method, uri)
-      console.log(`Sending XHR`)
-      xhr.send()
-    })).then( (response) => {
-      console.log(response)
-      dispatch(loginSuccess())
-      hashHistory.push('/home')
     }).catch( (status) => {
-      console.error("Unable to verify credentiels : " + status)
       dispatch(loginError(status))
     })
   }
