@@ -50,7 +50,7 @@ ReactDOM.render(
     <Router history={history}>
       <Route path="/" component={App}>
         <IndexRoute component={Login} onEnter={(nextState, replace) => passAuth(store, nextState, replace)}/>
-        <Route path="home" component={Home} onEnter={(nextState, replace) => checkAuth(store, nextState, replace)}/>
+        <Route path="home" component={Home} /*onEnter={(nextState, replace) => checkAuth(store, nextState, replace)}*//>
       </Route>
     </Router>
   </Provider>,

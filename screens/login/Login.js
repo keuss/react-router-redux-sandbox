@@ -17,6 +17,7 @@ class Login extends React.Component {
     this.props.handleLogin(this.props.username, this.props.password);
   }
   render() {
+    console.log(JSON.stringify(this.props.error));
     return (
       <form id="loginBox" onSubmit={this.handleFormAction}>
           <h4>Please log in</h4>
