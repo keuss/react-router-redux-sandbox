@@ -11,7 +11,7 @@ export default class AccountList extends React.Component {
         <div id="accList">
           {this.props.accounts.map((account, i) => (
             <h5 key={i} onClick={() => this.props.onClick(account.id)}
-                className={this.props.selectedId === account.id ? 'selected' : ''}>
+                className={this.props.selectedId === account.id ? 'pointer selected' : 'pointer'}>
               {account.name}
               <span className={account.balance >= 0 ? 'green' : 'red'}>{account.balance}€</span>
             </h5>)

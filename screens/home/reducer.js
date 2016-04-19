@@ -4,10 +4,9 @@
 import types from './actions'
 
 const defaultState = {
-  "accounts": []
+  accounts: []
 }
 
-// TODO : Fix reducers...
 export default (state = defaultState, action) => {
   switch (action.type) {
     case types.SET_SELECTED_ACCOUNT:

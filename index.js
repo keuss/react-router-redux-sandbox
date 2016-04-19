@@ -1,4 +1,5 @@
 import * as ES6Promise from 'es6-promise'
+import {babelpolyfill} from 'babel-polyfill'
 
 import React from 'react'
 import ReactDOM from 'react-dom'

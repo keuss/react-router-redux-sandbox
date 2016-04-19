@@ -17,14 +17,16 @@ class Login extends React.Component {
     this.props.handleLogin(this.props.username, this.props.password);
   }
   render() {
-    console.log(JSON.stringify(this.props.error));
+    if(this.props.error) {
+      console.log(JSON.stringify(this.props.error))
+    }
     return (
       <form id="loginBox" onSubmit={this.handleFormAction}>
           <h4>Please log in</h4>
           <input value={this.props.username} name="login" type="text" placeholder="Identifiant" onChange={(e) => this.props.onUsernameChange(e.target.value)}/>
           <input value={this.props.password} name="password" type="password" placeholder="Mot de passe" onChange={(e) => this.props.onPasswordChange(e.target.value)}/>
           <p style={{color: 'red', display: this.props.error ? 'block' : 'none'}}>{this.props.error}</p>
-          <button disabled={this.props.loading === true} type="button" onClick={this.handleFormAction}>Login</button>
+          <button disabled={this.props.loading === true} type="submit" onClick={this.handleFormAction}>Login</button>
       </form>
     )
   }

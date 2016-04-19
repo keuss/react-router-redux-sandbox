@@ -13,7 +13,6 @@ class Home extends React.Component {
   }
 
   componentDidMount() {
-    console.log('Home componentDidMount')
     this.props.fetchAccounts()
   }
 
@@ -23,7 +22,6 @@ class Home extends React.Component {
   }
 
   render() {
-    console.log('render Home', this.props)
     if(!_.isEmpty(this.props.accounts)) {
       return (
         <AccountList accounts={this.props.accounts} selectedId={this.props.selectedAccount.id} onClick={this.handleAccountClick}>
