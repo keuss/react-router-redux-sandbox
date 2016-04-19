@@ -26,18 +26,13 @@ export const updateLine = (id, line) => ({
   type: types.UPDATE_LINE
 })
 
-
 export const fetchAccounts = () =>
   (dispatch, getState) => {
-    console.log('fetchAccounts ...')
     dispatch({
       type: types.GET_ACCOUNTS_REQUEST
     })
     api.getJSON('accounts')
     .then(json => {
-      // add uniqId to documents
-      //const data = json.map(doc => Object.assign({}, doc, {uniqId: pieceId(doc)}))
-      console.log('fetchAccounts', json)
       dispatch({
         type: types.GET_ACCOUNTS_SUCCESS,
         data: json

@@ -2,6 +2,7 @@ import ActionType from '../../shared/ActionType'
 import { hashHistory } from 'react-router'
 
 import api from '../../shared/api'
+import {getSession} from '../../security/actions'
 
 const types = ActionType.create(
   'SET_USERNAME',
@@ -9,9 +10,7 @@ const types = ActionType.create(
 
   'LOGIN_REQUEST',
   'LOGIN_FAIL',
-  'LOGIN_SUCCESS',
-
-  'LOGIN'
+  'LOGIN_SUCCESS'
 )
 
 export default types
@@ -50,6 +49,8 @@ export const login = (username, password) =>
     api.getJSON('users', '', {name: username, pwd: password})
       .then( (response) => {
       if(response && response.length > 0) {
+        // Fake session
+        getSession()(dispatch, getState)
         dispatch(loginSuccess())
         hashHistory.push('/home')
       } else {

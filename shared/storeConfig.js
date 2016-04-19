@@ -5,6 +5,7 @@ import thunk from 'redux-thunk'
 
 import login from '../screens/login/reducer'
 import home from '../screens/home/reducer'
+import session from '../security/reducer'
 
 //Taken from redux example, this allows handling asynchronous data mode
 const middleware = [thunk, logger()]
@@ -17,6 +18,7 @@ const initialState = {}
 const rootReducer = combineReducers({
   login,
   home,
+  session,
   routing: routerReducer
 })
 

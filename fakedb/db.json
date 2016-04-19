@@ -1,11 +1,29 @@
 {
   "users": [
     {
-      "id": "1",
+      "id": 1,
       "name": "admin",
       "pwd": "admin"
+    },
+    {
+      "id": 2,
+      "name": "mike",
+      "pwd": "pass"
     }
   ],
+  "profile": {
+    "user": {
+      "id": "fake-user-id",
+      "lang": "fr",
+      "email": "mike@gmail.com",
+      "firstName": "mike",
+      "name": "that mike"
+    },
+    "permissions": [
+      "READ_ACCOUNT",
+      "UPDATE_ACCOUNT"
+    ]
+  },
   "accounts": [
     {
       "id": 1,

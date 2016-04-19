@@ -2,8 +2,10 @@
 
 react-router-redux-sandbox
 
-very inspired by
+Inspired by
 [https://github.com/reactjs/react-router-redux/tree/master/examples/basic](https://github.com/reactjs/react-router-redux/tree/master/examples/basic "https://github.com/reactjs/react-router-redux/tree/master/examples/basic")
+
+Fake Online REST API : http://jsonplaceholder.typicode.com/ with json-server  https://github.com/typicode/json-server
 
 # react version
 ```
@@ -31,5 +33,30 @@ npm strat
 }
 ```
 
-# test
+# test front
+```
+npm run serve
+```
+
 TEST HTTP (need python for SimpleHTTPServer) : http://localhost:8000/
+
+# test back
+```
+npm run run-back
+```
+
+# Fake bd service
+
+File `db.json` in `fakedb` folder
+
+Endpoints :
+
+ - http://localhost:3000/users
+ - http://localhost:3000/accounts
+ - http://localhost:3000/profile
+
+Use for instance (GET) :
+
+ - http://localhost:3000/users/1
+ - http://localhost:3000/accounts/2
+ - http://localhost:3000/users?name=mike&pwd=pass

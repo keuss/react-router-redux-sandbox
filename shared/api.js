@@ -4,10 +4,8 @@ class Api {
 
   constructor(basePath) {
     this.basePath = basePath
-    console.log('HELLO THIS IS CONSTRUCTOR')
   }
 
-  // Copied from Qajax
   // Serialize a map of properties (as a JavaScript object) to a query string
   serializeQuery(paramsObj) {
     var k, params = []
@@ -61,11 +59,5 @@ class Api {
 }
 
 // Create instance
-/*let instances = {
-  // basePath is '/api'
-  // add other api if needed '/...'
-  api: new Api('/')
-}*/
-//console.log(instances.api)
 const api = new Api('http://localhost:3000')
 export default api
