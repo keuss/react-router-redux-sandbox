@@ -56,12 +56,58 @@
     {
       "id": 2,
       "name": "Plan épargne logement",
-      "balance": 8000
+      "balance": 8000,
+      "expenses": [
+        {
+          "id": 1,
+          "date": "16/02/2016",
+          "issuer": "Moi",
+          "description": "Versement automatique",
+          "value": 1000
+        },
+        {
+          "id": 2,
+          "date": "16/03/2016",
+          "issuer": "Moi",
+          "description": "Versement automatique",
+          "value": 1000
+        },
+        {
+          "id": 3,
+          "date": "16/04/2016",
+          "issuer": "Moi",
+          "description": "Versement automatique",
+          "value": 1000
+        }
+      ]
     },
     {
       "id": 3,
       "name": "Prêt croissants",
-      "balance": -200
+      "balance": -200,
+      "expenses": [
+        {
+          "id": 1,
+          "date": "10/03/2016",
+          "issuer": "Moi",
+          "description": "Ouverture du prêt",
+          "value": 20
+        },
+        {
+          "id": 2,
+          "date": "12/03/2016",
+          "issuer": "Boulangerie XSang",
+          "description": "Achat",
+          "value": -240
+        },
+        {
+          "id": 3,
+          "date": "10/04/2016",
+          "issuer": "Moi",
+          "description": "Versement échéance prêt",
+          "value": 20
+        }
+      ]
     }
   ]
 }

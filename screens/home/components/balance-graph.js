@@ -6,9 +6,8 @@ import React from 'react'
 
 export default class BalanceGraph extends React.Component {
   render() {
-    console.log('BalanceGraph', this.props)
     return (
-      <div>
+      <div id="graph">
         <h5>Graph Dépenses</h5>
         <img src="http://i.imgur.com/KTEj96F.png" />
       </div>

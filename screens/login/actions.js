@@ -57,6 +57,7 @@ export const login = (username, password) =>
         dispatch(loginError("No account found..."))
       }
     }).catch( (status) => {
-      dispatch(loginError(status))
+      // In cas we don't obtain a string in status (i.e. failed connection)
+      dispatch(loginError(status.toString()))
     })
   }

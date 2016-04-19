@@ -15,7 +15,8 @@ import store from './shared/storeConfig'
 //Enable ES2016 Promises
 ES6Promise.polyfill()
 
-// FIXME why hashHistory ?
+// browserHistory requires routing on the server side when users access certain URLs
+// hashHistory uses the # sign to determine the route
 const history = syncHistoryWithStore(hashHistory, store)
 
 const passAuth = function(store, nextState, replace){
@@ -43,8 +44,6 @@ const checkAuth = function(store, nextState, replace) {
   }
 }
 
-console.log('index.js ...')
-// TODO home screen
 ReactDOM.render(
   <Provider store={store}>
     <Router history={history}>
