@@ -45,7 +45,7 @@ TEST HTTP (need python for SimpleHTTPServer) : http://localhost:8000/
 npm run run-back
 ```
 
-# Fake bd service
+# Fake backend JSON service
 
 File `db.json` in `fakedb` folder
 
@@ -60,3 +60,119 @@ Use for instance (GET) :
  - http://localhost:3000/users/1
  - http://localhost:3000/accounts/2
  - http://localhost:3000/users?name=mike&pwd=pass
+
+ ```
+ {
+   "users": [
+     {
+       "id": 1,
+       "name": "admin",
+       "pwd": "admin"
+     },
+     {
+       "id": 2,
+       "name": "mike",
+       "pwd": "pass"
+     }
+   ],
+   "profile": {
+     "user": {
+       "id": "fake-user-id",
+       "lang": "fr",
+       "email": "mike@gmail.com",
+       "firstName": "mike",
+       "name": "that mike"
+     },
+     "permissions": [
+       "READ_ACCOUNT",
+       "UPDATE_ACCOUNT"
+     ]
+   },
+   "accounts": [
+     {
+       "id": 1,
+       "name": "Compte principal",
+       "balance": 20,
+       "expenses": [
+         {
+           "id": 1,
+           "date": "10/04/2016",
+           "issuer": "Spotify",
+           "description": "Abonnement",
+           "value": -9.99
+         },
+         {
+           "id": 2,
+           "date": "12/04/2016",
+           "issuer": "Amazon.fr",
+           "description": "Remboursement retour produit",
+           "value": 250
+         },
+         {
+           "id": 3,
+           "date": "16/04/2016",
+           "issuer": "Steam",
+           "description": "Achat Dark Souls III",
+           "value": -59.99
+         }
+       ]
+     },
+     {
+       "id": 2,
+       "name": "Plan épargne logement",
+       "balance": 8000,
+       "expenses": [
+         {
+           "id": 1,
+           "date": "16/02/2016",
+           "issuer": "Moi",
+           "description": "Versement automatique",
+           "value": 1000
+         },
+         {
+           "id": 2,
+           "date": "16/03/2016",
+           "issuer": "Moi",
+           "description": "Versement automatique",
+           "value": 1000
+         },
+         {
+           "id": 3,
+           "date": "16/04/2016",
+           "issuer": "Moi",
+           "description": "Versement automatique",
+           "value": 1000
+         }
+       ]
+     },
+     {
+       "id": 3,
+       "name": "Prêt croissants",
+       "balance": -200,
+       "expenses": [
+         {
+           "id": 1,
+           "date": "10/03/2016",
+           "issuer": "Moi",
+           "description": "Ouverture du prêt",
+           "value": 20
+         },
+         {
+           "id": 2,
+           "date": "12/03/2016",
+           "issuer": "Boulangerie XSang",
+           "description": "Achat",
+           "value": -240
+         },
+         {
+           "id": 3,
+           "date": "10/04/2016",
+           "issuer": "Moi",
+           "description": "Versement échéance prêt",
+           "value": 20
+         }
+       ]
+     }
+   ]
+ }
+ ```
